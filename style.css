@@ -1,0 +1,99 @@
+:root {
+  --background-canvas: url('images/inside.png'); /* Pozadí pro element canvas */
+  --background-body: url("images/outside.png"); /* Pozadí pro tělo stránky */
+  --background-color-body: black; /* Barva pozadí pro tělo stránky */
+  --text-color: white; /* Barva textu */
+  --font-family: 'Bitter', serif; /* Font pro stránku */
+  --button-bg-start: #275786; /* Začátek gradientu pozadí pro tlačítka */
+  --button-bg-end: #0e234d; /* Konec gradientu pozadí pro tlačítka */
+  --button-border-color: #ffc04b; /* Barva ohraničení tlačítka */
+  --button-shadow-color: rgba(0, 0, 0, 0.4); /* Barva stínu tlačítka */
+  --end-bg-color: #28529d; /* Barva pozadí pro konečný prvek */
+  --end-border-color: #ffc04b; /* Barva ohraničení konečného prvku */
+}
+
+#canvas {
+  background-image: var(--background-canvas); /* Použití proměnné pro pozadí canvasu */
+}
+
+@keyframes waveAnimation {
+  0% {
+    transform: skewY(0deg); /* Počáteční transformace */
+  }
+  50% {
+    transform: skewY(5deg); /* Transformace ve středním bodě */
+  }
+  100% {
+    transform: skewY(0deg); /* Návrat na původní transformaci */
+  }
+}
+
+body {
+  background-image: var(--background-body); /* Použití proměnné pro pozadí těla stránky */
+  background-color: var(--background-color-body); /* Použití proměnné pro barvu pozadí */
+  background-repeat: repeat-x; /* Opakování pozadí pouze na ose X (šířka) */
+  text-align: center;
+  font-family: var(--font-family); /* Použití proměnné pro font */
+  font-weight: 700;
+  color: var(--text-color); /* Použití proměnné pro barvu textu */
+  padding: 0;
+  margin: 0;
+  animation: gradientAnimation 20s linear infinite; /* Animace rolování pozadí */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0 0; /* Počáteční pozice pozadí */
+  }
+  100% {
+    background-position: 100% 0; /* Posun pozadí na konec na ose X (šířka) */
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Zarovnání položek */
+  width: 90%; /* Responsivní šířka */
+  max-width: 800px; /* Maximální šířka */
+  margin: 2% auto; /* Odsazení shora a zdola, automatické postranní odsazení */
+}
+
+header img {
+  margin-right: 10px;
+  width: 10%; /* Přizpůsobení šířky obrázku v hlavičce */
+}
+
+#score, #time {
+  position: relative;
+}
+
+button {
+  margin-top: 5vh; /* Přizpůsobení mezery */
+  padding: 2vh 4vw; /* Přizpůsobení poloměrů */
+  font-size: 2vw; /* Relativní velikost písma */
+  border-radius: 3vw; /* Přizpůsobení poloměru */
+  border: 0.2vw solid var(--button-border-color); /* Použití proměnné pro tloušťku a barvu ohraničení */
+  font-family: var(--font-family); /* Použití proměnné pro font */
+  color: var(--text-color); /* Použití proměnné pro barvu textu */
+  background: linear-gradient(to bottom, var(--button-bg-start), var(--button-bg-end)); /* Použití proměnných pro gradient pozadí */
+  text-shadow: 0.3vw 0.3vw 0.5vw var(--button-shadow-color); /* Použití proměnné pro barvu stínu textu */
+  box-shadow: 0.5vw 0.5vw 1vw var(--button-shadow-color); /* Použití proměnné pro barvu stínu tlačítka */
+}
+
+#end {
+  width: 50%; /* Přizpůsobení šířky */
+  max-width: 300px; /* Přizpůsobení maximální šířky */
+  height: auto; /* Přizpůsobení výšky */
+  border-radius: 2%; /* Přizpůsobení poloměru */
+  color: var(--text-color); /* Použití proměnné pro barvu textu */
+  background-color: var(--end-bg-color); /* Použití proměnné pro barvu pozadí */
+  border: 0.5vw solid var(--end-border-color); /* Použití proměnné pro tloušťku a barvu ohraničení */
+  font-size: 2vw; /* Relativní velikost písma */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: none;
+}
