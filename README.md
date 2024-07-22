@@ -28,4 +28,4 @@ Tato webová hra obsahuje následující prvky:
 - `index.html`: Hlavní HTML soubor obsahující strukturu hry.
 - `style.css`: CSS soubor pro stylování herního pole a stránky.
 - `script.js`: JavaScript soubor obsahující herní logiku, pohyb postavy, sbírání předmětů a časovač.
-- `img/`: Složka obsahující obrázky pro herní pole, postavy a předměty (např. wall.png, down.png, watermelon.png).
+- `img/`: Složka obsahující obrázky pro herní pole, postavy a předměty.
