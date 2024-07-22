@@ -1,6 +1,6 @@
 # Hra Pac-Man
 
-Tento projekt je jednoduchá webová hra, kde hráč ovládá postavu Pac-Mana pomocí klávesnice a sbírá různé předměty ve specifickém herním poli. Hra obsahuje HTML, CSS a JavaScript pro implementaci herní logiky, stylování a vizualizaci.
+Tento projekt je jednoduchá webová hra, kde hráč ovládá postavu Pac-Mana pomocí klávesnice a sbírá různé předměty ve specifickém herním poli.
 
 ## Obsah
 
