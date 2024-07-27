@@ -1,33 +1,33 @@
-// Nastavení šířky a výšky herního plánu
+// Setting the width and height of the game board
 let width = 600;
 let height = 600;
 
-// Velikost jednotlivých bloků v herním poli
+// Size of individual blocks on the game board
 let blockSize = 30;
 
-// Vykreslení herního pole
+// Drawing the game board
 let canvas = document.querySelector("#canvas");
 let ctx = canvas.getContext("2d");
 
-// Stisknuté klávesy
+// Pressed keys
 let keys = [];
 
-// Předměty ve hře
+// Items in the game
 let fruits = [];
 
-// Zobrazení skóre
+// Displaying the score
 let scoreElement = document.getElementById("score");
 let score = 0;
 
-// Zobrazení zbývajícího času
+// Displaying the remaining time
 let timeElement = document.getElementById("time");
 let time = 0;
 
-// Zobrazení zprávy na konci hry
+// Displaying the end game message
 let endElement = document.getElementById("end");
 let endMessage = document.getElementById("message");
 
-// Herní pole - 1 označuje zeď, 0 prázdné pole
+// Game board - 1 indicates a wall, 0 indicates an empty space
 let board = [
   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   [1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1],
@@ -51,22 +51,22 @@ let board = [
   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 ];
 
-// Výchozí osa hráče
+// Default player position
 let player = {
-  // Pozice hráče na ose x a y
+  // Player's position on x and y axes
   x: 12,
   y: 2,
 };
 
-// Obrázek zdi
+// Wall image
 let wall = new Image();
 wall.src = "img/wall.png";
 
-// Obrázek hlavní postavy
+// Main character image
 let hero = new Image();
 hero.src = "img/down.png";
 
-// Obrázky předmětů
+// Item images
 let watermelon = new Image();
 watermelon.src = "img/watermelon.png";
 
@@ -82,11 +82,11 @@ apple.src = "img/apple.png";
 let orange = new Image();
 orange.src = "img/orange.png";
 
-// Upravujeme výšku a šířku canvasu (Herní plochy)
+// Adjusting the height and width of the canvas (game area)
 canvas.width = width;
 canvas.height = height;
 
-// Funkce pro vytvoření předmětů ve hře
+// Function to create items in the game
 function createPills() {
   fruits.push({
     x: 1,
@@ -149,7 +149,7 @@ function createPills() {
   });
 }
 
-// Funkce pro vykreslení herního pole a předmětů
+// Function to draw the game board and items
 function generateBoard() {
   for (let y = 0; y < board.length; y++) {
     for (let x = 0; x < board[y].length; x++) {
@@ -159,7 +159,7 @@ function generateBoard() {
     }
   }
 
-  // Zobrazení předmětů
+  // Displaying items
   for (let i = 0; i < fruits.length; i++) {
     ctx.drawImage(
       fruits[i].imageObject,
@@ -171,7 +171,7 @@ function generateBoard() {
   }
 }
 
-// Funkce pro spuštění hry
+// Function to start the game
 function startGame() {
   time = 80;
   createPills();
@@ -179,34 +179,34 @@ function startGame() {
   timer();
 }
 
-// Funkce pro pohyb hráče
+// Function to move the player
 function movePlayer() {
   if (keys[39] && canMove(player.x + 1, player.y)) {
-    // šipka doprava
+    // Right arrow
     hero.src = "img/right.png";
     player.x++;
   }
 
   if (keys[37] && canMove(player.x - 1, player.y)) {
-    // šipka doleva
+    // Left arrow
     hero.src = "img/left.png";
     player.x--;
   }
 
   if (keys[38] && canMove(player.x, player.y - 1)) {
-    // šipka nahoru
+    // Up arrow
     hero.src = "img/up.png";
     player.y--;
   }
 
   if (keys[40] && canMove(player.x, player.y + 1)) {
-    // šipka dolů
+    // Down arrow
     hero.src = "img/down.png";
     player.y++;
   }
 }
 
-// Kontrola možnosti pohybu
+// Checking if movement is possible
 function canMove(x, y) {
   return (
     y >= 0 &&
@@ -217,7 +217,7 @@ function canMove(x, y) {
   );
 }
 
-// Funkce pro sbírání předmětů
+// Function to collect items
 function collect() {
   for (let i = 0; i < fruits.length; i++) {
     if (player.x == fruits[i].x && player.y == fruits[i].y) {
@@ -228,14 +228,14 @@ function collect() {
   }
 }
 
-// Funkce pro zvýšení a vypsání skóre
+// Function to increase and display the score
 function increaseScore() {
   score++;
 
   scoreElement.textContent = `${score}/10`;
 }
 
-// Funkce pro odpočet času
+// Function for the countdown timer
 function timer() {
   function startTimer() {
     let timer = time;
@@ -268,20 +268,20 @@ function timer() {
   startTimer();
 }
 
-// Funkce pro ukončení hry
+// Function to end the game
 function endGame(type, winTime) {
   if (type === "win") {
     endElement.style.display = "block";
-    endMessage.textContent = `Vyhráli jste! Sesbírali jste všechny předměty.`;
+    endMessage.textContent = `You won! You collected all items.`;
   }
 
   if (type === "loss") {
     endElement.style.display = "block";
-    endMessage.textContent = `Prohráli jste! Nestihli jste sesbírat všechny předměty. Zkuste to znovu.`;
+    endMessage.textContent = `You lost! You didn't collect all items in time. Try again.`;
   }
 }
 
-// Funkce pro vykreslení herního pole a hráče
+// Function to draw the game board and player
 function draw() {
   ctx.clearRect(
     player.x * blockSize,
@@ -301,18 +301,18 @@ function draw() {
   );
 }
 
-// Stisk a puštění kláves
+// Key press and release events
 window.addEventListener("load", startGame);
 
-// Události pro stisk klávesy
+// Key down events
 document.body.addEventListener("keydown", function (e) {
   keys[e.keyCode] = true;
 });
 
-// Události pro puštění klávesy
+// Key up events
 document.body.addEventListener("keyup", function (e) {
   keys[e.keyCode] = false;
 });
 
-// Hlavní smyčka hry
+// Main game loop
 setInterval(draw, 100);
