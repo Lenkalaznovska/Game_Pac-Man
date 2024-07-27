@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
   <head lang="cs">
     <title>Game</title>
@@ -14,21 +13,23 @@
 
   <body>
     <header>
+      <!-- Displays the score and time -->
       <div>
         <img src="img/score.png" alt="score" />
         <span id="score">0/10</span>
       </div>
-
       <div id="time">00:00</div>
     </header>
 
+    <!-- Game area with canvas for rendering -->
     <div id="game">
       <canvas id="canvas"></canvas>
     </div>
 
+    <!-- End game section with result message and restart button -->
     <div id="end">
       <p id="message"></p>
-      <button onclick="location.reload()">Hrát znovu</button>
+      <button onclick="location.reload()">Play Again</button>
     </div>
 
     <script src="script.js"></script>
