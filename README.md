@@ -1,31 +1,31 @@
-# Hra Pac-Man
+# Pac-Man Game
 
-Tento projekt je jednoduchá webová hra, kde hráč ovládá postavu Pac-Mana pomocí klávesnice a sbírá různé předměty ve specifickém herním poli.
+This project is a simple web-based game where the player controls the Pac-Man character using the keyboard and collects various items in a specific game field. You can view the live version of the game [here](https://lenkalaznovska.github.io/Game_Pac-Man/).
 
-## Obsah
+## Table of Contents
 
-1. [Popis](#popis)
-2. [Použité technologie](#použité-technologie)
-3. [Struktura projektu](#struktura-projektu)
+1. [Description](#description)
+2. [Technologies Used](#technologies-used)
+3. [Project Structure](#project-structure)
 
-## Popis
+## Description
 
-Tato webová hra obsahuje následující prvky:
-- **Herní pole**: Mřížka s překážkami, ve které se hráč pohybuje a sbírá předměty.
-- **Hráčská postava**: Postava, kterou hráč ovládá a která může sbírat předměty.
-- **Předměty**: Různé obrázky (ovoce), které hráč musí sbírat, aby získal body.
-- **Skóre a čas**: Zobrazení aktuálního skóre a zbývajícího času na konci hry.
-- **Hlavní menu**: Možnost začít hru nebo ji restartovat.
+This web-based game includes the following elements:
+- **Game Field:** A grid with obstacles where the player moves and collects items.
+- **Player Character:** The character that the player controls and can collect items.
+- **Items:** Various images (fruits) that the player must collect to earn points.
+- **Score and Time:** Display of the current score and remaining time at the end of the game.
+- **Main Menu:** Option to start the game or restart it.
 
-## Použité technologie
+## Technologies Used
 
-- **HTML5**: Struktura stránky a herního pole.
-- **CSS3**: Stylování stránky a herního pole, animace.
-- **JavaScript**: Herní logika, ovládání klávesnicí, správa herního času a skóre.
+- **HTML5:** Structure of the page and game field.
+- **CSS3:** Styling of the page and game field, animations.
+- **JavaScript:** Game logic, keyboard controls, game time management, and scoring.
 
-## Struktura projektu
+## Project Structure
 
-- `index.html`: Hlavní HTML soubor obsahující strukturu hry.
-- `style.css`: CSS soubor pro stylování herního pole a stránky.
-- `script.js`: JavaScript soubor obsahující herní logiku, pohyb postavy, sbírání předmětů a časovač.
-- `img/`: Složka obsahující obrázky pro herní pole, postavy a předměty.
+- `index.html`: The main HTML file containing the structure of the game.
+- `style.css`: CSS file for styling the game field and page.
+- `script.js`: JavaScript file containing game logic, character movement, item collection, and timer.
+- `img/`: Folder containing images for the game field, character, and items.
