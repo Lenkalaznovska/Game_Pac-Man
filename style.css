@@ -1,4 +1,4 @@
-/* Definice CSS proměnných */
+/* CSS variable definitions */
 :root {
   --background-image-canvas: url("img/inside.png");
   --background-image-body: url("img/outside.png");
@@ -24,85 +24,85 @@
   --max-width-end: 300px;
 }
 
-/* Stylování elementu #canvas */
+/* Styling for the #canvas element */
 #canvas {
   background-image: var(--background-image-canvas);
 }
 
-/* Animace vlnění pro klíčový frame */
+/* Keyframe animation for wave effect */
 @keyframes waveAnimation {
   0% {
-    transform: skewY(0deg); /* Počáteční transformace */
+    transform: skewY(0deg); /* Initial transformation */
   }
   50% {
-    transform: skewY(5deg); /* Transformace ve středním bodě */
+    transform: skewY(5deg); /* Transformation at the midpoint */
   }
   100% {
-    transform: skewY(0deg); /* Návrat na původní transformaci */
+    transform: skewY(0deg); /* Return to initial transformation */
   }
 }
 
-/* Stylování těla stránky */
+/* Styling for the body element */
 body {
   background-image: var(--background-image-body);
   background-color: var(--background-color-body);
-  background-repeat: repeat-x; /* Opakování pozadí pouze na ose X */
+  background-repeat: repeat-x; /* Repeat background only on the X-axis */
   text-align: center;
   font-family: var(--font-family);
   font-weight: var(--font-weight);
   color: var(--text-color);
   padding: 0;
   margin: 0;
-  animation: gradientAnimation 20s linear infinite; /* Animace posunu pozadí */
+  animation: gradientAnimation 20s linear infinite; /* Background animation */
 }
 
-/* Animace plynulého posunu pozadí */
+/* Animation for smooth background movement */
 @keyframes gradientAnimation {
   0% {
-    background-position: 0 0; /* Počáteční pozice pozadí */
+    background-position: 0 0; /* Initial background position */
   }
   100% {
-    background-position: 100% 0; /* Konečná pozice pozadí */
+    background-position: 100% 0; /* Final background position */
   }
 }
 
-/* Stylování hlavičky */
+/* Styling for the header */
 header {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Zarovnání položek */
+  align-items: center; /* Align items */
   width: var(--width-header);
   max-width: var(--max-width-header);
-  margin: 2% auto; /* Odsazení shora a zdola, automatické postranní odsazení */
+  margin: 2% auto; /* Top and bottom margin, automatic side margins */
 }
 
-/* Stylování obrázku v hlavičce */
+/* Styling for images in the header */
 header img {
   margin-right: 10px;
-  width: 10%; /* Přizpůsobení šířky obrázku */
+  width: 10%; /* Adjust image width */
 }
 
-/* Stylování elementů #score a #time */
+/* Styling for #score and #time elements */
 #score,
 #time {
   position: relative;
 }
 
-/* Stylování tlačítek */
+/* Styling for buttons */
 button {
-  margin-top: 5vh; /* Mezery nad tlačítkem */
-  padding: 2vh 4vw; /* Vnitřní odsazení tlačítka */
-  font-size: var(--font-size-button); /* Velikost písma tlačítka */
-  border-radius: var(--border-radius-button); /* Zaoblení rohů tlačítka */
-  border: var(--border-width-button) solid var(--button-border-color); /* Okraj tlačítka */
+  margin-top: 5vh; /* Space above the button */
+  padding: 2vh 4vw; /* Padding inside the button */
+  font-size: var(--font-size-button); /* Font size for the button */
+  border-radius: var(--border-radius-button); /* Border radius for the button */
+  border: var(--border-width-button) solid var(--button-border-color); /* Button border */
   font-family: var(--font-family);
   color: var(--text-color);
   background: var(--button-background);
-  text-shadow: var(--button-text-shadow); /* Stín textu tlačítka */
-  box-shadow: var(--button-box-shadow); /* Stín tlačítka */
+  text-shadow: var(--button-text-shadow); /* Text shadow for the button */
+  box-shadow: var(--button-box-shadow); /* Box shadow for the button */
 }
 
-/* Stylování koncového elementu (#end) */
+/* Styling for the #end element */
 #end {
   width: var(--width-end);
   max-width: var(--max-width-end);
@@ -110,12 +110,12 @@ button {
   border-radius: var(--border-radius-end);
   color: var(--text-color);
   background-color: var(--end-background-color);
-  border: var(--border-width-end) solid var(--end-border-color); /* Okraj koncového elementu */
-  font-size: var(--font-size-end); /* Velikost písma koncového elementu */
+  border: var(--border-width-end) solid var(--end-border-color); /* Border for the end element */
+  font-size: var(--font-size-end); /* Font size for the end element */
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Zarovnání do středu */
+  transform: translate(-50%, -50%); /* Center alignment */
   text-align: center;
-  display: none; /* Skrytí elementu */
+  display: none; /* Hide element by default */
 }
