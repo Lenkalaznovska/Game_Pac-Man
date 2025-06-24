@@ -4,11 +4,7 @@ This project is a simple web-based game where the player controls the Pac-Man ch
 
 ![image](https://github.com/user-attachments/assets/92b25ce9-1a7d-412c-8232-933819da88ab)
 
-## Table of Contents
-
-1. [Description](#description)
-2. [Technologies Used](#technologies-used)
-3. [Project Structure](#project-structure)
+---
 
 ## Description
 
