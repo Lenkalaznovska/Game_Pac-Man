@@ -1,6 +1,8 @@
 # Pac-Man Game
 
-This project is a simple web-based game where the player controls the Pac-Man character using the keyboard and collects various items in a specific game field. You can view the live version of the game [here](https://lenkalaznovska.github.io/Game_Pac-Man/).
+This project is a simple web-based game where the player controls the Pac-Man character using the keyboard and collects various items in a specific game field. You can view the live version of the game [here](https://lenkalaznovska.github.io/Game_Pac-Man/)
+
+![image](https://github.com/user-attachments/assets/92b25ce9-1a7d-412c-8232-933819da88ab)
 
 ## Table of Contents
 
